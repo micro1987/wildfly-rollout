@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   labels:
-    argocd.argoproj.io/instance: wildfly-rollout
+    app: wildfly-rollout
   name: wildfly-rollout
 spec:
   replicas: 2
