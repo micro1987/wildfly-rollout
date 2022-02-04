@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  labels:
+    argocd.argoproj.io/instance: wildfly-rollout
+  name: wildfly-rollout
+spec:
+  replicas: 2
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: wildfly-rollout
+  strategy:
+    blueGreen:
+      activeService: rollout-bluegreen-active
+      autoPromotionEnabled: false
+      previewService: rollout-bluegreen-preview
+  template:
+    metadata:
+      labels:
+        app: wildfly-rollout
+    spec:
+      containers:
+      - image: docker.io/microchip1987/wildfly9.0:latest
+        name: wildfly-app
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
