@@ -6,7 +6,7 @@ metadata:
     name: rollout-bluegreen-preview
 spec:
   ports:
-  - nodePort: 36000
+  - nodePort: 26000
     port: 8080
     protocol: TCP
     targetPort: 8080

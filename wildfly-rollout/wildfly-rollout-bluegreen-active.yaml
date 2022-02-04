@@ -6,7 +6,7 @@ metadata:
   name: rollout-bluegreen-active
 spec:
   ports:
-  - nodePort: 35000
+  - nodePort: 25000
     port: 8080
     protocol: TCP
     targetPort: 8080
