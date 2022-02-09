@@ -21,7 +21,7 @@ spec:
         app: wildfly-rollout
     spec:
       containers:
-      - image: docker.io/microchip1987/wildfly9.0:latest
+      - image: docker.io/microchip1987/wildfly9.0:v1
         name: wildfly-app
         ports:
         - containerPort: 8080
